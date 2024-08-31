@@ -13,5 +13,7 @@ print(f"b is {b}")
 
 # Was it what you expected?
 
+# Answer: `a` is 20 and `b` is 20. I guessed it right. a is 20 because it was reassigned on line 7 to the value of b, which was 20.
+
 # Try to puzzle it out, and then move on to
 # 020_state_tables.py
