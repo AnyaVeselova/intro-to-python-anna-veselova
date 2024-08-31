@@ -45,6 +45,8 @@ print(f"2 + 3 = {added} (should be 5)")
 multiplied = 2 * 3
 print(f"2 * 3 = {multiplied} (should be 6)")
 
+
+
 # @TASK: For each section below:
 #
 # 1. Uncomment the code by removing the `# `
@@ -54,13 +56,13 @@ print(f"2 * 3 = {multiplied} (should be 6)")
 
 # == Subtraction ==
 
-# subtracted = 2 ? 3
-# print(f"2 ? 3 = {subtracted} (should be -1)")
+subtracted = 2 - 3
+print(f"2 ? 3 = {subtracted} (should be -1)")
 
 # == Division ==
 
-# divided = 2 ? 3
-# print(f"2 ? 3 = {divided} (should be 0.6666666666666666)")
+divided = 2 / 3
+print(f"2 / 3 = {divided} (should be 0.6666666666666666)")
 
 # This kind of 'decimal point' number, 0.6666666666666666 is
 # called a float, by the way, meaning 'floating point'.
@@ -68,26 +70,101 @@ print(f"2 * 3 = {multiplied} (should be 6)")
 # == Modulus ==
 # Sometimes known as "remainder if we divide 3 by 2"
 
-# modulus = 3 ? 2
-# print(f"3 ? 2 = {modulus} (should be 1)")
+modulus = 3 % 2
+print(f"3 % 2 = {modulus} (should be 1)")
 
 # == Floor division ==
 # Sometimes known as "division without remainder"
 
-# floor_divided = 2 ? 3
-# print(f"2 ? 3 = {floor_divided} (should be 0)")
+floor_divided = 2 // 3
+print(f"2 // 3 = {floor_divided} (should be 0)")
 
 # == Exponentiation ==
 # Sometimes known as "2 to the power of 3"
 
-# expr = 2 ? 3
-# print(f"2 ? 3 = {expr} (should be 8)")
+expr = 2 ** 3
+print(f"2 ** 3 = {expr} (should be 8)")
 
 # There are many more operators in Python that you can
 # research. You're very welcome to try out a few below:
 
 # OPERATOR PLAYGROUND STARTS
 
+# == Comparison Operators ==
+equal = 2 == 2
+print(f"2 ** 2 = {equal} (should be True)")
+
+not_equal = 2 != 3
+print(f"2 != 3 = {not_equal} (should be True)")
+
+greater_than = 3 > 2
+print(f"3 > 2 = {greater_than} (should be True)")
+
+less_than = 2 < 3
+print(f"2 < 3 = {less_than} (should be True)")
+
+greater_than_or_equal = 3 >= 3
+print(f"3 >= 3 = {greater_than_or_equal} (should be True)")
+
+less_than_or_equal = 2 <= 3
+print(f"2 <= 3 = {less_than_or_equal} (should be True)")
+
+# == Logical Operators ==
+
+and_operator = True and True
+print(f"True and True = {and_operator} (should be True)")
+
+or_operator = True or False
+print(f"True or False = {or_operator} (should be True)")
+
+not_operator = not True
+print(f"not True = {not_operator} (should be False)")
+
+# == Assignment Operators ==
+assignment = 2
+print(f"assignment = {assignment} (should be 2)")
+
+assignment += 3
+print(f"assignment += 3 = {assignment} (should be 5)")
+
+assignment -= 3
+print(f"assignment -= 3 = {assignment} (should be 2)")
+
+assignment *= 3
+print(f"assignment *= 3 = {assignment} (should be 6)")
+
+assignment /= 3
+print(f"assignment /= 3 = {assignment} (should be 2.0)")
+
+assignment %= 3
+print(f"assignment %= 3 = {assignment} (should be 2.0)")
+
+assignment **= 3
+print(f"assignment **= 3 = {assignment} (should be 8.0)")
+
+assignment //= 3
+print(f"assignment //= 3 = {assignment} (should be 2.0)")
+
+#== Membership Operators ==
+
+in_operator = 2 in [1, 2, 3]  
+print(f"2 in [1, 2, 3] = {in_operator} (should be True)")
+
+not_in_operator = 2 not in [1, 2, 3]
+print(f"2 not in [1, 2, 3] = {not_in_operator} (should be False)")
+
+# == Identity Operators ==
+
+is_operator = 2 is 2
+print(f"2 is 2 = {is_operator} (should be True)")
+
+is_not_operator = 2 is not 3
+print(f"2 is not 3 = {is_not_operator} (should be True)")
+
+# == Ternanry Operators ==
+x = 5
+result = "Even" if x % 2 == 0 else "Odd" 
+print(f"5 % 2 == 0 = {result} (should be Odd)")
 
 
 # OPERATOR PLAYGROUND ENDS
