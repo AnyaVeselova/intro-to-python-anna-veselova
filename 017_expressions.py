@@ -96,11 +96,20 @@ add_one(add_one(add_one(add_one(add_one(add_one(1))))))
 # @TASK: What do you think that evaluates to? And why? Give
 # it a go and find out.
 
+
+# ANSWER: The expression evaluates to 7 because each nested call to add_one adds 1 to the result
+# of the previous call, starting with 1. After six increments, the final result is 7.
+
+
 # @TASK: Play around with building complex expressions in
 # the space below.
 
 # EXPRESSIONS PLAYGROUND BEGINS
+(add_one(3) * (5 if add_one(2) > 3 else 2) + add_one(4)) / 2 # Evaluates to 6.5
+# Steps: (4 * 2) + 5) / 2 -> 13 / 2 = 6.5
 
+(10 + 2 * 3 > 15) and (add_one(4) * 2 == 10) # Evaluates to True
+# Steps: 16 > 15 and 10 == 10 -> True and True -> True
 
 
 # EXPRESSIONS PLAYGROUND ENDS
