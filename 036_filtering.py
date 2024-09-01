@@ -37,11 +37,27 @@ print("Function: only_positive_numbers")
 
 # Return a new list with only the positive numbers
 def only_positive_numbers(numbers):
-  pass
+  new_numbers = []
+  for number in range(len(numbers)):
+    if numbers[number] > 0:
+      new_numbers.append(numbers[number])
+    
+  return new_numbers
+
+def postivie_numbers_different_way(numbers):
+  return [number for number in numbers if number > 0]
+  
 
 check_that_these_are_equal(
   only_positive_numbers([-4, 4, -3, 3]), [4, 3])
 check_that_these_are_equal(
   only_positive_numbers([-100]), [])
+
+check_that_these_are_equal(
+  postivie_numbers_different_way([-4, 4, -3, 3, 6]), [4, 3, 6]
+)
+check_that_these_are_equal(
+  postivie_numbers_different_way([-600]), []
+)
 
 # When you're done, move on to 037_dicts.py
