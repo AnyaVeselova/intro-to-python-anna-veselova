@@ -26,11 +26,21 @@ from lib.helpers import check_that_these_are_equal
 
 # @TASK: Complete this exercise.
 
+
+
 print("")
 print("Function: report_long_words")
 
 def report_long_words(words):
-  pass
+  long_words = filter_long_words(words)
+  truncated_words = truncate_long_words(long_words)
+  return "These words are quite long: " + ", ".join(truncated_words)
+
+def filter_long_words(words):
+  return [word for word in words if len(word) > 10 and '-' not in word]
+
+def truncate_long_words(words):
+  return [word if len(word) <= 15 else word[:15] + '...' for word in words]
 
 check_that_these_are_equal(
   report_long_words([

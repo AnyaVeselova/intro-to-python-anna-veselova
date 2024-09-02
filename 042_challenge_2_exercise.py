@@ -27,20 +27,15 @@
 # This is getting really challenging now — and is entirely
 # optional. Don't forget about your assessment!
 
-def play_game():
-  board = [
-    [".", ".", "."],
-    [".", ".", "."],
-    [".", ".", "."]
-  ]
+def play_game(board_size=4):
+  board = [["." for _ in range(board_size)] for _ in range(board_size)]
   player = "X"
   while not is_game_over(board):
     print(print_board(board))
     print("It's " + player + "'s turn.")
     # `input` asks the user to type in a string
     # We then need to convert it to a number using `int`
-    row = int(input("Enter a row: "))
-    column = int(input("Enter a column: "))
+    row, column = validate_move(board, board_size)
     board = make_move(board, row, column, player)
     if player == "X":
       player = "O"
@@ -60,6 +55,20 @@ def make_move(board, row, column, player):
   board[row][column] = player
   return board
 
+def validate_move(board, board_size):
+  while True:
+    try:
+      row = int(input(f"Enter a row (0 to {board_size - 1}): "))
+      column = int(input(f"Enter a column (0 to {board_size - 1}): "))
+      if row < 0 or row >= board_size or column < 0 or column >= board_size:
+        print("That's not a valid move. Try again.")
+      elif board[row][column] != ".":
+        print("That space is already taken. Try again.")
+      else:
+        return row, column
+      
+    except ValueError:
+      print("That's not a valid move. Try again.")
 
 # This function will extract three cells from the board
 def get_cells(board, coord_1, coord_2, coord_3):
@@ -106,6 +115,9 @@ def is_game_over(board):
       if are_all_cells_the_same(board, group[0], group[1], group[2]):
         return True # We found a winning row!
         # Note that return also stops the function
+    if all(cell != "." for row in board for cell in row):
+        print("It's a draw!")
+        return True
   return False # If we get here, we didn't find a winning row
 
 # And test it out:
